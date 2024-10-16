@@ -3,7 +3,7 @@ const cors = require("cors");
 const ytdl = require("ytdl-core");
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "https://downloader-frontend-ten.vercel.app/" }));
 app.use(express.json());
 
 // Endpoint to fetch video info
