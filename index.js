@@ -3,7 +3,8 @@ const cors = require("cors");
 const ytdl = require("ytdl-core");
 
 const app = express();
-app.use(cors({ origin: "https://downloader-frontend-ten.vercel.app/" }));
+app.use(cors({ origin: 'https://downloader-frontend-r7c5pylbg-munir-akbars-projects.vercel.app', // Replace with your actual frontend URL
+    methods: ['GET', 'POST'], }));
 app.use(express.json());
 
 // Endpoint to fetch video info
