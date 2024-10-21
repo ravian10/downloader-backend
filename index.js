@@ -5,8 +5,14 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 // Enable CORS
-app.use(cors({ origin: 'https://downloader-frontend-r7c5pylbg-munir-akbars-projects.vercel.app', // Replace with your actual frontend URL
-    methods: ['GET', 'POST'], }));
+const corsOptions = {
+  origin: 'https://downloader-frontend-ten.vercel.app', // Your Vercel frontend URL
+  methods: 'GET,POST', // Specify which methods are allowed
+  credentials: true, // If you need credentials (cookies, authorization headers, etc.)
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // Helper function to convert shortened URLs to full YouTube URLs
